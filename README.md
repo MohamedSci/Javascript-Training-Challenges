@@ -1,87 +1,862 @@
+Here’s a collection of challenges to test **intermediate-level JavaScript** skills. They focus on problem-solving, logical thinking, and understanding key JavaScript concepts:
+
 ---
 
-# **Complete JavaScript Syllabus: 30 Essential Intermediate Problems with Solutions and Explanations**
+### 1. **Manipulating Arrays**
+- **Problem:** Write a function that takes an array of numbers and returns a new array with all even numbers doubled and odd numbers halved.
+  ```javascript
+  function modifyArray(arr) {
+    // Your code here
+  }
 
-JavaScript is one of the most popular and versatile programming languages today. Mastering it involves understanding key concepts and techniques essential for building robust web applications. In this guide, we will explore **30 intermediate JavaScript problems** that focus on various fundamental concepts, algorithms, and best practices.
+  console.log(modifyArray([2, 3, 4, 5])); // Output: [4, 1.5, 8, 2.5]
+  ```
 
-This comprehensive syllabus covers **functions**, **asynchronous programming**, **prototypes**, **advanced array manipulations**, and more. Each problem comes with a **solution** and a **clear explanation** to ensure you can tackle any JavaScript challenge with confidence.
+---
+
+### 2. **Object Transformation**
+- **Problem:** Write a function that converts an array of objects into a single object, using a specific key from each object as the property name.
+  ```javascript
+  const input = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' }
+  ];
+  
+  function arrayToObject(arr) {
+    // Your code here
+  }
+
+  console.log(arrayToObject(input)); 
+  // Output: { 1: { id: 1, name: 'Alice' }, 2: { id: 2, name: 'Bob' } }
+  ```
+
+---
+
+### 3. **Promise Chaining**
+- **Problem:** Write a function that takes an array of URLs, fetches data from each, and returns an array of their JSON responses.
+  ```javascript
+  async function fetchData(urls) {
+    // Your code here
+  }
+
+  const urls = ['https://jsonplaceholder.typicode.com/posts/1', 'https://jsonplaceholder.typicode.com/posts/2'];
+  fetchData(urls).then(console.log); 
+  ```
+
+---
+
+### 4. **String Compression**
+- **Problem:** Write a function that compresses a string using counts of repeated characters.
+  ```javascript
+  function compressString(str) {
+    // Your code here
+  }
+
+  console.log(compressString('aaabbcccaa')); // Output: "a3b2c3a2"
+  ```
+
+---
+
+### 5. **Flatten Nested Arrays**
+- **Problem:** Write a function to flatten a deeply nested array into a single-level array.
+  ```javascript
+  function flattenArray(arr) {
+    // Your code here
+  }
+
+  console.log(flattenArray([1, [2, [3, 4, [5]]]])); // Output: [1, 2, 3, 4, 5]
+  ```
+
+---
+
+### 6. **Unique Characters**
+- **Problem:** Write a function that checks if a string has all unique characters.
+  ```javascript
+  function hasUniqueCharacters(str) {
+    // Your code here
+  }
+
+  console.log(hasUniqueCharacters('hello')); // Output: false
+  console.log(hasUniqueCharacters('world')); // Output: true
+  ```
+
+---
+
+### 7. **Deep Clone**
+- **Problem:** Implement a deep cloning function for objects and arrays.
+  ```javascript
+  function deepClone(obj) {
+    // Your code here
+  }
+
+  const original = { a: 1, b: { c: 2 } };
+  const copy = deepClone(original);
+  console.log(copy); // Output: { a: 1, b: { c: 2 } }
+  console.log(copy === original); // Output: false
+  ```
+
+---
+
+### 8. **Custom Map Function**
+- **Problem:** Implement your version of the `Array.prototype.map()` method.
+  ```javascript
+  function customMap(array, callback) {
+    // Your code here
+  }
+
+  console.log(customMap([1, 2, 3], x => x * 2)); // Output: [2, 4, 6]
+  ```
+
+---
+
+### 9. **Sorting Objects by Property**
+- **Problem:** Write a function to sort an array of objects by a specific property.
+  ```javascript
+  const input = [
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 22 },
+    { name: 'Charlie', age: 30 }
+  ];
+
+  function sortByProperty(arr, property) {
+    // Your code here
+  }
+
+  console.log(sortByProperty(input, 'age'));
+  // Output: [{ name: 'Bob', age: 22 }, { name: 'Alice', age: 25 }, { name: 'Charlie', age: 30 }]
+  ```
+
+---
+
+### 10. **Currying**
+- **Problem:** Implement a curried function that adds three numbers.
+  ```javascript
+  function add(a) {
+    // Your code here
+  }
+
+  console.log(add(2)(3)(5)); // Output: 10
+  ```
+
+---
+
+### 11. **Recursive Fibonacci**
+- **Problem:** Write a function to generate the `n`th Fibonacci number using recursion.
+  ```javascript
+  function fibonacci(n) {
+    // Your code here
+  }
+
+  console.log(fibonacci(6)); // Output: 8
+  ```
+
+---
+
+### 12. **Rate Limiter**
+- **Problem:** Implement a rate limiter function that ensures a callback is executed at most once in a given time frame.
+  ```javascript
+  function rateLimiter(callback, limit) {
+    // Your code here
+  }
+
+  const log = () => console.log('Called!');
+  const limitedLog = rateLimiter(log, 1000);
+  limitedLog(); // Output: "Called!"
+  limitedLog(); // No output within 1 second
+  ```
+
+---
+
+### 13. **Debouncing**
+- **Problem:** Write a debounce function that delays a callback until after a specified time has elapsed since the last call.
+  ```javascript
+  function debounce(callback, delay) {
+    // Your code here
+  }
+
+  const log = () => console.log('Debounced!');
+  const debouncedLog = debounce(log, 500);
+  debouncedLog(); // Output appears only if 500ms pass without further calls
+  ```
+
+---
+
+### 14. **Binary Search**
+- **Problem:** Implement binary search on a sorted array.
+  ```javascript
+  function binarySearch(arr, target) {
+    // Your code here
+  }
+
+  console.log(binarySearch([1, 3, 5, 7, 9], 5)); // Output: 2
+  ```
+
+---
+
+### 15. **Balanced Parentheses**
+- **Problem:** Write a function that checks if a string has balanced parentheses.
+  ```javascript
+  function isBalanced(str) {
+    // Your code here
+  }
+
+  console.log(isBalanced('(a + b) * (c - d)')); // Output: true
+  console.log(isBalanced('(a + b * (c - d)')); // Output: false
+  ```
+
+---
+
+These challenges assess key JavaScript concepts, such as:
+- Functional programming (e.g., `map`, `filter`, `reduce`)
+- Asynchronous programming (e.g., promises, async/await)
+- Object and array manipulation
+- Recursion
+- Advanced problem-solving with algorithms.
+
+Let me know if you need solutions or explanations for any of these!
+
+---
+
+### **1. Manipulating Arrays**
+**Problem**: Modify an array such that even numbers are doubled and odd numbers are halved.
+
+```javascript
+function modifyArray(arr) {
+  return arr.map(num => (num % 2 === 0 ? num * 2 : num / 2));
+}
+
+// Test cases
+console.log(modifyArray([2, 3, 4, 5])); // Output: [4, 1.5, 8, 2.5]
+console.log(modifyArray([10, 15, 20, 25])); // Output: [20, 7.5, 40, 12.5]
+```
+
+**Explanation**:
+- We use the `Array.prototype.map()` method to create a new array by applying a transformation to each element.
+- The transformation checks if a number is even (`num % 2 === 0`). If true, it multiplies the number by 2; otherwise, it divides the number by 2.
+
+---
+
+### **2. Object Transformation**
+**Problem**: Convert an array of objects into a single object, using a specific key as the property name.
+
+```javascript
+function arrayToObject(arr, key = 'id') {
+  return arr.reduce((acc, obj) => {
+    acc[obj[key]] = obj;
+    return acc;
+  }, {});
+}
+
+// Test cases
+const input = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' }
+];
+console.log(arrayToObject(input)); 
+// Output: { 1: { id: 1, name: 'Alice' }, 2: { id: 2, name: 'Bob' } }
+```
+
+**Explanation**:
+- We use `Array.prototype.reduce()` to accumulate values into a single object.
+- For each object in the array, we add a property to the accumulator using the specified key.
+- The default key is `"id"`, but it can be customized.
+
+---
+
+### **3. Promise Chaining**
+**Problem**: Fetch data from an array of URLs and return their JSON responses.
+
+```javascript
+async function fetchData(urls) {
+  const promises = urls.map(url => fetch(url).then(response => response.json()));
+  return Promise.all(promises);
+}
+
+// Test cases
+const urls = [
+  'https://jsonplaceholder.typicode.com/posts/1',
+  'https://jsonplaceholder.typicode.com/posts/2'
+];
+
+fetchData(urls).then(data => console.log(data));
+```
+
+**Explanation**:
+- `Array.prototype.map()` is used to create an array of promises, where each promise fetches data from a URL and parses it as JSON.
+- `Promise.all()` is used to run all these promises in parallel and wait for all of them to resolve.
+- The function is `async`, so it returns a promise that resolves with an array of JSON responses.
+
+---
+
+### **4. String Compression**
+**Problem**: Compress a string by counting repeated characters.
+
+```javascript
+function compressString(str) {
+  let compressed = '';
+  let count = 1;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i + 1]) {
+      count++;
+    } else {
+      compressed += str[i] + count;
+      count = 1;
+    }
+  }
+
+  return compressed;
+}
+
+// Test cases
+console.log(compressString('aaabbcccaa')); // Output: "a3b2c3a2"
+console.log(compressString('abc')); // Output: "a1b1c1"
+```
+
+**Explanation**:
+- Iterate through the string, counting consecutive identical characters.
+- When a different character is encountered, append the current character and its count to the result string.
+- Reset the count for the new character.
+
+---
+
+### **5. Flatten Nested Arrays**
+**Problem**: Flatten a deeply nested array into a single-level array.
+
+```javascript
+function flattenArray(arr) {
+  return arr.reduce((flat, item) => {
+    return flat.concat(Array.isArray(item) ? flattenArray(item) : item);
+  }, []);
+}
+
+// Test cases
+console.log(flattenArray([1, [2, [3, 4, [5]]]])); // Output: [1, 2, 3, 4, 5]
+console.log(flattenArray([[1, 2], [3, [4, 5]]])); // Output: [1, 2, 3, 4, 5]
+```
+
+**Explanation**:
+- `Array.prototype.reduce()` is used to process each element of the array.
+- If an element is an array, we recursively flatten it. If it’s not, we add it directly to the flattened array.
+- This solution works for arbitrarily deep nesting.
+
+
+---
+
+### **6. Unique Characters**
+**Problem**: Write a function that checks if a string has all unique characters.
+
+```javascript
+function hasUniqueCharacters(str) {
+  const charSet = new Set();
+  for (const char of str) {
+    if (charSet.has(char)) {
+      return false;
+    }
+    charSet.add(char);
+  }
+  return true;
+}
+
+// Test cases
+console.log(hasUniqueCharacters('hello')); // Output: false
+console.log(hasUniqueCharacters('world')); // Output: true
+console.log(hasUniqueCharacters('abcABC')); // Output: true
+```
+
+**Explanation**:
+- A `Set` is used to store characters as we iterate through the string.
+- If a character is already in the `Set`, the function returns `false`.
+- Otherwise, the character is added to the `Set`.
+- This solution has **O(n)** time complexity, where `n` is the length of the string.
+
+---
+
+### **7. Deep Clone**
+**Problem**: Implement a deep cloning function for objects and arrays.
+
+```javascript
+function deepClone(obj) {
+  if (obj === null || typeof obj !== 'object') {
+    return obj; // Return non-object values as is
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(deepClone); // Recursively clone array elements
+  }
+
+  const clonedObj = {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clonedObj[key] = deepClone(obj[key]); // Recursively clone properties
+    }
+  }
+  return clonedObj;
+}
+
+// Test cases
+const original = { a: 1, b: { c: 2, d: [3, 4] } };
+const copy = deepClone(original);
+
+console.log(copy); // Output: { a: 1, b: { c: 2, d: [3, 4] } }
+console.log(copy === original); // Output: false
+console.log(copy.b === original.b); // Output: false
+```
+
+**Explanation**:
+- If the input is not an object (e.g., `null`, number, string), return it as is.
+- If it’s an array, recursively clone each element.
+- If it’s an object, recursively clone each property.
+- This ensures all nested objects and arrays are deeply copied.
+
+---
+
+### **8. Custom Map Function**
+**Problem**: Implement your version of the `Array.prototype.map()` method.
+
+```javascript
+function customMap(array, callback) {
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    result.push(callback(array[i], i, array));
+  }
+  return result;
+}
+
+// Test cases
+const nums = [1, 2, 3];
+console.log(customMap(nums, x => x * 2)); // Output: [2, 4, 6]
+console.log(customMap(nums, (x, i) => x + i)); // Output: [1, 3, 5]
+```
+
+**Explanation**:
+- A new array `result` is created to store the transformed elements.
+- For each element in the input array, the `callback` function is applied with arguments `(currentValue, index, array)`.
+- The transformed value is added to the `result` array.
+- This mirrors the behavior of the built-in `map()` method.
+
+---
+
+### **9. Sorting Objects by Property**
+**Problem**: Write a function to sort an array of objects by a specific property.
+
+```javascript
+function sortByProperty(arr, property) {
+  return arr.slice().sort((a, b) => {
+    if (a[property] < b[property]) return -1;
+    if (a[property] > b[property]) return 1;
+    return 0;
+  });
+}
+
+// Test cases
+const input = [
+  { name: 'Alice', age: 25 },
+  { name: 'Bob', age: 22 },
+  { name: 'Charlie', age: 30 }
+];
+
+console.log(sortByProperty(input, 'age'));
+// Output: [{ name: 'Bob', age: 22 }, { name: 'Alice', age: 25 }, { name: 'Charlie', age: 30 }]
+console.log(sortByProperty(input, 'name'));
+// Output: [{ name: 'Alice', age: 25 }, { name: 'Bob', age: 22 }, { name: 'Charlie', age: 30 }]
+```
+
+**Explanation**:
+- The `slice()` method creates a shallow copy of the array to prevent mutation.
+- The `sort()` method is used with a custom comparator function:
+  - Return `-1` if `a[property] < b[property]`, meaning `a` should come before `b`.
+  - Return `1` if `a[property] > b[property]`.
+  - Return `0` if they are equal.
+
+---
+
+### **10. Currying**
+**Problem**: Implement a curried function that adds three numbers.
+
+```javascript
+function add(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    };
+  };
+}
+
+// Test cases
+console.log(add(2)(3)(5)); // Output: 10
+console.log(add(1)(1)(1)); // Output: 3
+```
+
+**Explanation**:
+- Currying transforms a function that takes multiple arguments into a sequence of functions, each taking one argument.
+- The `add` function returns another function for each argument, accumulating the sum.
+- When the third argument is provided, the innermost function computes and returns the result.
+
+---
+
+Let’s complete the solutions for **problems 11-15**.
+
+---
+
+### **11. Recursive Fibonacci**
+**Problem**: Write a function to generate the `n`th Fibonacci number using recursion.
+
+```javascript
+function fibonacci(n) {
+  if (n <= 0) return 0;
+  if (n === 1) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Test cases
+console.log(fibonacci(6)); // Output: 8
+console.log(fibonacci(10)); // Output: 55
+console.log(fibonacci(1)); // Output: 1
+console.log(fibonacci(0)); // Output: 0
+```
+
+**Explanation**:
+- The Fibonacci sequence is defined as:
+  - `F(0) = 0`
+  - `F(1) = 1`
+  - `F(n) = F(n-1) + F(n-2)` for `n > 1`
+- The base cases (`n = 0` and `n = 1`) return 0 and 1, respectively.
+- Recursive calls calculate `F(n-1)` and `F(n-2)`, summing them to find `F(n)`.
+
+**Note**: While this implementation is simple, it’s not efficient due to repeated calculations. Dynamic programming or memoization is better for larger `n`.
+
+---
+
+### **12. Rate Limiter**
+**Problem**: Implement a rate limiter function that ensures a callback is executed at most once in a given time frame.
+
+```javascript
+function rateLimiter(callback, limit) {
+  let lastCall = 0;
+
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall >= limit) {
+      lastCall = now;
+      callback(...args);
+    }
+  };
+}
+
+// Test cases
+const log = () => console.log('Called at', Date.now());
+const limitedLog = rateLimiter(log, 1000);
+
+limitedLog(); // Called immediately
+limitedLog(); // Ignored if within 1 second
+setTimeout(limitedLog, 1100); // Called after 1.1 seconds
+```
+
+**Explanation**:
+- `lastCall` stores the timestamp of the last execution.
+- `Date.now()` checks the current time.
+- If the difference between `now` and `lastCall` exceeds the limit, the callback is executed, and `lastCall` is updated.
+
+---
+
+### **13. Debouncing**
+**Problem**: Write a debounce function that delays a callback until after a specified time has elapsed since the last call.
+
+```javascript
+function debounce(callback, delay) {
+  let timer;
+
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => callback(...args), delay);
+  };
+}
+
+// Test cases
+const log = () => console.log('Debounced at', Date.now());
+const debouncedLog = debounce(log, 500);
+
+debouncedLog(); // Starts a timer
+debouncedLog(); // Resets the timer
+setTimeout(debouncedLog, 600); // Executes 600ms later
+```
+
+**Explanation**:
+- `clearTimeout(timer)` cancels any ongoing timer when the function is called.
+- `setTimeout` starts a new timer for the callback.
+- The callback only executes after the delay if no further calls occur.
+
+---
+
+### **14. Binary Search**
+**Problem**: Implement binary search on a sorted array.
+
+```javascript
+function binarySearch(arr, target) {
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+
+    if (arr[mid] === target) {
+      return mid;
+    } else if (arr[mid] < target) {
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+
+  return -1; // Not found
+}
+
+// Test cases
+console.log(binarySearch([1, 3, 5, 7, 9], 5)); // Output: 2
+console.log(binarySearch([1, 3, 5, 7, 9], 6)); // Output: -1
+console.log(binarySearch([], 1)); // Output: -1
+```
+
+**Explanation**:
+- Binary search works on sorted arrays by repeatedly halving the search range.
+- Start with `left` as the first index and `right` as the last index.
+- Calculate the middle index (`mid`) and compare the middle element with the target.
+  - If equal, return the index.
+  - If less, narrow the search to the right half.
+  - If greater, narrow the search to the left half.
+- If `left > right`, the target is not in the array.
+
+---
+
+### **15. Balanced Parentheses**
+**Problem**: Write a function that checks if a string has balanced parentheses.
+
+```javascript
+function isBalanced(str) {
+  const stack = [];
+  const pairs = { ')': '(', ']': '[', '}': '{' };
+
+  for (const char of str) {
+    if (['(', '[', '{'].includes(char)) {
+      stack.push(char); // Push opening brackets to the stack
+    } else if ([')', ']', '}'].includes(char)) {
+      if (stack.pop() !== pairs[char]) {
+        return false; // Mismatched or unbalanced
+      }
+    }
+  }
+
+  return stack.length === 0; // Check if all brackets are balanced
+}
+
+// Test cases
+console.log(isBalanced('(a + b) * (c - d)')); // Output: true
+console.log(isBalanced('(a + b * (c - d)')); // Output: false
+console.log(isBalanced('[{()}]')); // Output: true
+console.log(isBalanced('[{(}]')); // Output: false
+```
+
+**Explanation**:
+- A `stack` is used to track opening brackets.
+- For each character:
+  - Push it onto the stack if it’s an opening bracket.
+  - If it’s a closing bracket, pop the stack and check if it matches the expected opening bracket.
+- At the end, if the stack is empty, all brackets are balanced.
+
+---
+
+The 15 problems presented are **diverse** and cover many **core concepts** at an intermediate level of JavaScript, including array and object manipulation, recursion, functional programming, promises, and algorithmic problem-solving. However, JavaScript is a vast language, and there are additional intermediate-level concepts that might not have been addressed in these problems.
+
+Here’s a list of **additional topics** and problem types that you might consider exploring to ensure a comprehensive understanding:
+
+---
+
+### **1. Asynchronous Programming**
+- **Problem**: Create a custom implementation of `Promise.all()`.
+- **Problem**: Implement a retry mechanism for failed API calls with exponential backoff.
+
+### **2. Prototype and Inheritance**
+- **Problem**: Write a function to demonstrate prototypal inheritance.
+- **Problem**: Implement a custom `new` operator in JavaScript.
+
+---
+
+### **3. Advanced Array and Object Operations**
+- **Problem**: Group an array of objects by a specific key (e.g., `age`).
+- **Problem**: Create a function to deeply merge two objects.
+
+---
+
+### **4. Functional Programming**
+- **Problem**: Implement a custom version of `Array.prototype.filter()`.
+- **Problem**: Write a function to compose multiple functions.
+
+---
+
+### **5. Error Handling**
+- **Problem**: Write a function to safely access deeply nested object properties without throwing errors.
+- **Problem**: Implement a function that retries an operation on failure up to a maximum number of attempts.
+
+---
+
+### **6. Regular Expressions**
+- **Problem**: Write a regex to validate an email address.
+- **Problem**: Create a function to extract all hashtags from a given string.
+
+---
+
+### **7. Advanced DOM Manipulation**
+- **Problem**: Write a function to implement a simple dropdown menu with JavaScript.
+- **Problem**: Implement a custom event listener for delegating events to dynamically created elements.
+
+---
+
+### **8. Memory Management and Closures**
+- **Problem**: Explain and demonstrate how closures can lead to memory leaks and how to prevent them.
+- **Problem**: Create a function that caches results of expensive calculations (memoization).
+
+---
+
+### **9. Performance Optimization**
+- **Problem**: Write a function to compare the execution times of two functions using `performance.now()`.
+- **Problem**: Optimize a function that processes a large dataset efficiently.
+
+---
+
+### **10. Advanced ES6+ Features**
+- **Problem**: Use destructuring and rest/spread operators to clone and manipulate objects/arrays.
+- **Problem**: Demonstrate the use of `Symbol` and `WeakMap` in real-world scenarios.
+
+---
+
+### **11. Testing and Debugging**
+- **Problem**: Write unit tests for a function using a popular testing library like Jest.
+- **Problem**: Debug and fix a script that has asynchronous race conditions.
+
+---
+
+### **12. Advanced Algorithms**
+- **Problem**: Write a function to solve the "Knapsack Problem."
+- **Problem**: Implement a basic Least Recently Used (LRU) cache.
+
+---
+
+### **13. Modular JavaScript**
+- **Problem**: Write a small module using ES6 modules and demonstrate how to import/export it.
+- **Problem**: Create a singleton in JavaScript and demonstrate its use.
+
+---
+
+### **14. Advanced String Manipulation**
+- **Problem**: Create a function to convert a string to CamelCase, snake_case, or kebab-case.
+- **Problem**: Implement a text justification algorithm.
+
+---
+
+### **15. JavaScript in the Browser**
+- **Problem**: Write a script to lazily load images as the user scrolls down.
+- **Problem**: Create a simple to-do app using localStorage for persistence.
+
+---
+
+### **Next Steps**
+To comprehensively master **intermediate JavaScript**, you should:
+1. Explore **framework-specific challenges** (e.g., React, Node.js).
+2. Delve deeper into **design patterns** like the Singleton, Factory, or Observer.
+3. Work on **real-world applications** (e.g., building APIs or front-end features).
+4. Learn **tooling and debugging techniques** (e.g., using Chrome DevTools effectively).
+
+Would you like me to expand on any of these topics or create challenges for them?
+
+Below are **best-practice solutions and detailed explanations** for the newly listed **15 JavaScript intermediate problems**. These solutions are structured for clarity, performance, and real-world applicability.
 
 ---
 
 ### **1. Custom `Promise.all()` Implementation**
+**Problem**: Implement a custom `Promise.all()` function.
 
-#### Problem:
-Create your own version of `Promise.all()` that resolves an array of promises and returns their results in the same order.
-
-#### Solution:
 ```javascript
 function customPromiseAll(promises) {
   return new Promise((resolve, reject) => {
     const results = [];
     let completedPromises = 0;
+
     promises.forEach((promise, index) => {
-      Promise.resolve(promise).then((value) => {
-        results[index] = value;
-        completedPromises++;
-        if (completedPromises === promises.length) {
-          resolve(results);
-        }
-      }).catch(reject);
+      Promise.resolve(promise)
+        .then((value) => {
+          results[index] = value;
+          completedPromises++;
+          if (completedPromises === promises.length) {
+            resolve(results);
+          }
+        })
+        .catch(reject); // Reject as soon as one promise fails
     });
 
-    if (promises.length === 0) resolve(results);
+    if (promises.length === 0) resolve(results); // Handle empty input
   });
 }
+
+// Test cases
+const p1 = Promise.resolve(1);
+const p2 = Promise.resolve(2);
+const p3 = Promise.resolve(3);
+
+customPromiseAll([p1, p2, p3]).then(console.log); // Output: [1, 2, 3]
+
+const p4 = Promise.reject("Error");
+customPromiseAll([p1, p4, p3]).catch(console.error); // Output: "Error"
 ```
 
-#### Explanation:
-- `Promise.all()` resolves an array of promises in order.
-- This custom implementation uses a `forEach` loop to resolve each promise and store the result.
-- The promise resolves when all promises are completed.
+**Explanation**:
+- Resolves all promises and collects their results in the original order.
+- If any promise fails, the entire function rejects immediately.
+- Handles non-Promise inputs by wrapping them with `Promise.resolve()`.
 
 ---
 
-### **2. Prototypal Inheritance Demonstration**
+### **2. Prototypal Inheritance**
+**Problem**: Demonstrate prototypal inheritance with a `Person` and `Student`.
 
-#### Problem:
-Demonstrate **prototypal inheritance** by creating a `Person` constructor and extending it with a `Student` constructor.
-
-#### Solution:
 ```javascript
 function Person(name, age) {
   this.name = name;
   this.age = age;
 }
 
-Person.prototype.greet = function() {
+Person.prototype.greet = function () {
   return `Hi, I'm ${this.name} and I'm ${this.age} years old.`;
 };
 
 function Student(name, age, grade) {
-  Person.call(this, name, age);
+  Person.call(this, name, age); // Call the parent constructor
   this.grade = grade;
 }
 
-Student.prototype = Object.create(Person.prototype);
+Student.prototype = Object.create(Person.prototype); // Inherit prototype
 Student.prototype.constructor = Student;
 
-Student.prototype.study = function() {
+Student.prototype.study = function () {
   return `${this.name} is studying in grade ${this.grade}.`;
 };
+
+// Test cases
+const student = new Student("Alice", 20, "10th");
+console.log(student.greet()); // Output: "Hi, I'm Alice and I'm 20 years old."
+console.log(student.study()); // Output: "Alice is studying in grade 10th."
 ```
 
-#### Explanation:
-- `Person.call(this, name, age)` calls the parent constructor within the child constructor.
-- The `Object.create()` method sets up inheritance so the `Student` prototype is based on `Person`.
+**Explanation**:
+- `Object.create()` creates a new object with the parent's prototype.
+- `call()` invokes the parent constructor in the child’s context.
+- `Student.prototype.constructor` is reassigned to avoid breaking the prototype chain.
 
 ---
 
-### **3. Grouping Objects by Key**
+### **3. Group Array of Objects**
+**Problem**: Group an array of objects by a specific key.
 
-#### Problem:
-Group an array of objects by a specified key.
-
-#### Solution:
 ```javascript
 function groupBy(arr, key) {
   return arr.reduce((result, item) => {
@@ -93,23 +868,31 @@ function groupBy(arr, key) {
     return result;
   }, {});
 }
+
+// Test cases
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 30 },
+];
+
+console.log(groupBy(people, "age"));
+// Output: { '25': [ { name: 'Alice', age: 25 }, { name: 'Bob', age: 25 } ], '30': [ { name: 'Charlie', age: 30 } ] }
 ```
 
-#### Explanation:
-- Uses `reduce()` to iterate through the array, grouping objects based on a common key.
-- Efficient grouping ensures data remains organized based on a dynamic key.
+**Explanation**:
+- The `reduce()` function iterates through the array.
+- Groups objects based on the provided `key`, storing them in the accumulator.
 
 ---
 
-### **4. Deep Merging Objects**
+### **4. Deep Merge Objects**
+**Problem**: Write a function to deeply merge two objects.
 
-#### Problem:
-Merge two objects deeply, combining nested properties into one object.
-
-#### Solution:
 ```javascript
 function deepMerge(obj1, obj2) {
   const result = { ...obj1 };
+
   for (const key in obj2) {
     if (obj2.hasOwnProperty(key)) {
       if (typeof obj2[key] === "object" && !Array.isArray(obj2[key])) {
@@ -119,22 +902,27 @@ function deepMerge(obj1, obj2) {
       }
     }
   }
+
   return result;
 }
+
+// Test cases
+const obj1 = { a: 1, b: { c: 2 } };
+const obj2 = { b: { d: 3 }, e: 4 };
+
+console.log(deepMerge(obj1, obj2)); 
+// Output: { a: 1, b: { c: 2, d: 3 }, e: 4 }
 ```
 
-#### Explanation:
-- Uses recursion to deeply merge nested objects, preserving original data structure.
-- Ensures conflicts are handled by prioritizing the second object (`obj2`).
+**Explanation**:
+- Recursively merges objects while avoiding reference sharing for nested objects.
+- Handles conflicts by prioritizing `obj2`.
 
 ---
 
 ### **5. Custom `Array.prototype.filter()`**
+**Problem**: Implement a custom filter function.
 
-#### Problem:
-Write your own `filter()` function to replicate its behavior.
-
-#### Solution:
 ```javascript
 function customFilter(array, callback) {
   const result = [];
@@ -145,143 +933,172 @@ function customFilter(array, callback) {
   }
   return result;
 }
+
+// Test cases
+const nums = [1, 2, 3, 4];
+console.log(customFilter(nums, (n) => n % 2 === 0)); // Output: [2, 4]
 ```
 
-#### Explanation:
-- Iterates through the array, applies the `callback` function to each item.
-- Adds elements to the result array if the callback returns `true`.
+**Explanation**:
+- Iterates through the array, applying the `callback` to each element.
+- Pushes elements for which the callback returns `true`.
 
 ---
 
-### **6. Safe Nested Property Access**
+### **6. Safe Nested Access**
+**Problem**: Safely access deeply nested object properties.
 
-#### Problem:
-Safely access a deeply nested object without risking errors.
-
-#### Solution:
 ```javascript
 function getSafe(obj, path, defaultValue) {
   return path.reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : defaultValue), obj);
 }
+
+// Test cases
+const data = { a: { b: { c: 42 } } };
+console.log(getSafe(data, ["a", "b", "c"], null)); // Output: 42
+console.log(getSafe(data, ["a", "x", "y"], null)); // Output: null
 ```
 
-#### Explanation:
-- Uses `reduce()` to safely traverse the object path.
-- Returns the default value if any key does not exist at any depth.
+**Explanation**:
+- Uses `reduce()` to traverse the object path, returning the default value if any key is missing.
 
 ---
 
-### **7. Email Validation with Regular Expressions**
+### **7. Regular Expression for Emails**
+**Problem**: Validate an email address.
 
-#### Problem:
-Create a regex pattern to validate email addresses.
-
-#### Solution:
 ```javascript
 function validateEmail(email) {
   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regex.test(email);
 }
+
+// Test cases
+console.log(validateEmail("test@example.com")); // Output: true
+console.log(validateEmail("invalid-email")); // Output: false
 ```
 
-#### Explanation:
-- The regex checks for the general structure of email addresses, ensuring that only valid formats pass.
+**Explanation**:
+- Matches typical email patterns with support for common edge cases.
+
+---
+
+Let's continue with solutions for the remaining problems:
 
 ---
 
 ### **8. Custom `new` Operator**
+**Problem**: Implement a custom `new` operator in JavaScript.
 
-#### Problem:
-Implement your own version of the `new` keyword in JavaScript.
-
-#### Solution:
 ```javascript
 function customNew(constructor, ...args) {
-  const obj = {};
-  Object.setPrototypeOf(obj, constructor.prototype);
-  const result = constructor.apply(obj, args);
-  return result instanceof Object ? result : obj;
+  const obj = {}; // Create a new object
+  Object.setPrototypeOf(obj, constructor.prototype); // Set prototype
+  const result = constructor.apply(obj, args); // Call constructor
+  return result instanceof Object ? result : obj; // Return the object or constructor result
 }
+
+// Test case
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+const person = customNew(Person, 'Alice', 25);
+console.log(person); // Output: Person { name: 'Alice', age: 25 }
 ```
 
-#### Explanation:
-- `customNew` creates an object, sets the prototype, and calls the constructor with the arguments.
-- Ensures correct behavior like the built-in `new`.
+**Explanation**:
+- Creates a new object, sets its prototype to the constructor’s prototype, and invokes the constructor with the provided arguments.
+- Ensures that the function behaves similarly to the built-in `new` operator.
 
 ---
 
 ### **9. Retry Mechanism with Exponential Backoff**
+**Problem**: Implement a retry mechanism for failed API calls with exponential backoff.
 
-#### Problem:
-Implement a retry mechanism for API calls with exponential backoff.
-
-#### Solution:
 ```javascript
 function retryWithExponentialBackoff(fn, retries, delay) {
   return new Promise((resolve, reject) => {
     const attempt = (retriesLeft, delayLeft) => {
-      fn().then(resolve).catch((err) => {
-        if (retriesLeft === 0) {
-          reject(err);
-        } else {
-          setTimeout(() => attempt(retriesLeft - 1, delayLeft * 2), delayLeft);
-        }
-      });
+      fn()
+        .then(resolve)
+        .catch((err) => {
+          if (retriesLeft === 0) {
+            reject(err);
+          } else {
+            setTimeout(() => attempt(retriesLeft - 1, delayLeft * 2), delayLeft);
+          }
+        });
     };
+
     attempt(retries, delay);
   });
 }
+
+// Test case
+const apiCall = () => new Promise((resolve, reject) => Math.random() > 0.7 ? resolve('Success') : reject('Failed'));
+
+retryWithExponentialBackoff(apiCall, 3, 1000).then(console.log).catch(console.error);
 ```
 
-#### Explanation:
-- This function retries a failed API call with an exponentially increasing delay.
-- It stops after the specified number of retries.
+**Explanation**:
+- Recursively calls the function with increasing delay (exponential backoff) on failure.
+- Stops after the specified retries or resolves if the function succeeds.
 
 ---
 
-### **10. Function Composition**
+### **10. Compose Functions**
+**Problem**: Write a function to compose multiple functions.
 
-#### Problem:
-Compose multiple functions together so that the output of one function becomes the input of the next.
-
-#### Solution:
 ```javascript
 function compose(...fns) {
   return (x) => fns.reduceRight((acc, fn) => fn(acc), x);
 }
+
+// Test case
+const add5 = (x) => x + 5;
+const multiply2 = (x) => x * 2;
+
+const composedFunction = compose(add5, multiply2);
+console.log(composedFunction(2)); // Output: 9 (2 * 2 + 5)
 ```
 
-#### Explanation:
-- `reduceRight()` executes the functions from right to left.
-- This ensures that the last function in the sequence is called first.
+**Explanation**:
+- `reduceRight()` applies the functions from right to left (from last to first).
+- This creates a function that applies each function in sequence, passing the result to the next function.
 
 ---
 
-### **11. Destructuring and Spread/Rest Operators**
+### **11. Object Destructuring and Rest/Spread Operators**
+**Problem**: Use destructuring and rest/spread operators to clone and manipulate objects.
 
-#### Problem:
-Use destructuring and spread/rest operators for object manipulation.
-
-#### Solution:
 ```javascript
 const person = { name: "Alice", age: 25, country: "USA" };
+
+// Destructuring
 const { name, age } = person;
+console.log(name, age); // Output: Alice 25
+
+// Spread operator (shallow copy)
 const personCopy = { ...person };
+console.log(personCopy); // Output: { name: 'Alice', age: 25, country: 'USA' }
+
+// Rest operator
 const { country, ...rest } = person;
+console.log(country, rest); // Output: USA { name: 'Alice', age: 25 }
 ```
 
-#### Explanation:
-- Destructuring extracts values directly from objects.
-- Spread (`...`) copies an entire object, and rest (`...`) collects the remaining keys.
+**Explanation**:
+- Destructuring extracts specific properties from an object.
+- The spread operator (`...`) copies all properties into a new object.
+- The rest operator (`...`) collects the remaining properties into a new object.
 
 ---
 
-### **12. Text Justification**
+### **12. Text Justification Algorithm**
+**Problem**: Implement a text justification algorithm.
 
-#### Problem:
-Implement a text justification algorithm that aligns text to the left and right.
-
-#### Solution:
 ```javascript
 function fullJustify(words, maxWidth) {
   let result = [];
@@ -296,6 +1113,7 @@ function fullJustify(words, maxWidth) {
       } else {
         let spaceBetween = Math.floor(spaces / (currentLine.length - 1));
         let extraSpaces = spaces % (currentLine.length - 1);
+
         for (let i = 0; i < currentLine.length - 1; i++) {
           currentLine[i] += " ".repeat(spaceBetween);
           if (i < extraSpaces) {
@@ -314,21 +1132,22 @@ function fullJustify(words, maxWidth) {
   result.push(currentLine.join(" ") + " ".repeat(maxWidth - currentLength - (currentLine.length - 1)));
   return result;
 }
+
+// Test case
+const words = ["This", "is", "an", "example", "of", "text", "justification."];
+const maxWidth = 16;
+console.log(fullJustify(words, maxWidth));
 ```
 
-#### Explanation:
-- This algorithm distributes spaces between words in each line, ensuring lines are exactly `maxWidth` characters.
+**Explanation**:
+- Justifies text by adjusting spaces between words to ensure each line is exactly `maxWidth` characters.
+- For the last line, words are left-aligned and the remaining space is distributed at the end.
 
 ---
 
-### **13. LRU Cache Implementation**
+### **13. LRU (Least Recently Used) Cache**
+**Problem**: Implement an LRU cache.
 
-#### Problem:
-Implement an **LRU (Least Recently Used)** cache with basic functionality
-
-.
-
-#### Solution:
 ```javascript
 class LRUCache {
   constructor(capacity) {
@@ -353,20 +1172,25 @@ class LRUCache {
     this.cache.set(key, value);
   }
 }
+
+// Test case
+const lru = new LRUCache(2);
+lru.put(1, 1);
+lru.put(2, 2);
+console.log(lru.get(1)); // Output: 1
+lru.put(3, 3);
+console.log(lru.get(2)); // Output: -1
 ```
 
-#### Explanation:
-- The cache uses `Map` to maintain insertion order.
-- The least recently used (LRU) item is removed when the cache exceeds its capacity.
+**Explanation**:
+- Uses a `Map` to maintain insertion order.
+- Moves accessed keys to the end of the `Map` and removes the oldest (least recently used) when the cache exceeds its capacity.
 
 ---
 
-### **14. Performance Benchmarking with `performance.now()`**
+### **14. Optimizing Performance with `performance.now()`**
+**Problem**: Compare the execution times of two functions.
 
-#### Problem:
-Measure the execution time of a function using `performance.now()`.
-
-#### Solution:
 ```javascript
 function measureTime(fn) {
   const start = performance.now();
@@ -374,20 +1198,28 @@ function measureTime(fn) {
   const end = performance.now();
   return end - start;
 }
+
+const slowFunction = () => {
+  let sum = 0;
+  for (let i = 0; i < 1e6; i++) sum += i;
+  return sum;
+};
+
+const fastFunction = () => 42;
+
+console.log(measureTime(slowFunction)); // Output: Time taken for slowFunction
+console.log(measureTime(fastFunction)); // Output: Time taken for fastFunction
 ```
 
-#### Explanation:
-- Uses `performance.now()` for high-resolution timing.
-- Measures the time in milliseconds for the function execution.
+**Explanation**:
+- Uses `performance.now()` to measure the time (in milliseconds) taken to execute a function.
+- Useful for performance benchmarking.
 
 ---
 
-### **15. Singleton Design Pattern**
+### **15. Singleton Pattern**
+**Problem**: Implement a Singleton pattern in JavaScript.
 
-#### Problem:
-Implement a Singleton pattern in JavaScript.
-
-#### Solution:
 ```javascript
 const Singleton = (function () {
   let instance;
@@ -405,392 +1237,17 @@ const Singleton = (function () {
     }
   };
 })();
+
+// Test case
+const obj1 = Singleton.getInstance();
+const obj2 = Singleton.getInstance();
+
+console.log(obj1 === obj2); // Output: true (same instance)
 ```
 
-#### Explanation:
-- Ensures only one instance of the object is created.
-- The `getInstance()` method ensures access to that instance.
+**Explanation**:
+- The `Singleton` pattern ensures that a class has only one instance and provides a global point of access to it.
+- The `getInstance` method checks if an instance already exists, otherwise, it creates one.
 
 ---
 
-### **Final Words**
-
-These **30 JavaScript problems** cover various essential topics, including **asynchronous programming**, **prototypal inheritance**, **algorithmic challenges**, and **design patterns**. By practicing and mastering these problems, you will solidify your understanding of **intermediate JavaScript** and be well-equipped to tackle real-world projects.
-
-### **16. Flatten Nested Arrays**
-
-#### Problem:
-Write a function to flatten a deeply nested array.
-
-#### Solution:
-```javascript
-function flatten(arr) {
-  return arr.reduce((flat, item) => 
-    Array.isArray(item) ? flat.concat(flatten(item)) : flat.concat(item), []);
-}
-```
-
-#### Explanation:
-- Uses recursion to handle arrays within arrays.
-- The `reduce()` method iterates through the array and concatenates nested elements, flattening them into a single array.
-
----
-
-### **17. Debouncing a Function**
-
-#### Problem:
-Implement a debounced function, which limits the rate at which a function is invoked.
-
-#### Solution:
-```javascript
-function debounce(func, delay) {
-  let timeout;
-  return function(...args) {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), delay);
-  };
-}
-```
-
-#### Explanation:
-- The `debounce()` function ensures that the function `func` is called only after a specified delay (e.g., after the user stops typing).
-- `clearTimeout()` is used to cancel the previous timer before starting a new one.
-
----
-
-### **18. Throttling a Function**
-
-#### Problem:
-Implement a throttling function, which limits the number of times a function can be called within a specified time period.
-
-#### Solution:
-```javascript
-function throttle(func, limit) {
-  let lastFunc;
-  let lastRan;
-  return function(...args) {
-    if (!lastRan) {
-      func(...args);
-      lastRan = Date.now();
-    } else {
-      clearTimeout(lastFunc);
-      lastFunc = setTimeout(() => {
-        if (Date.now() - lastRan >= limit) {
-          func(...args);
-          lastRan = Date.now();
-        }
-      }, limit - (Date.now() - lastRan));
-    }
-  };
-}
-```
-
-#### Explanation:
-- `throttle()` ensures the function `func` is executed only once within a given `limit` period (e.g., once every 100ms).
-- It uses `setTimeout()` and `clearTimeout()` to control the execution frequency.
-
----
-
-### **19. Deep Clone an Object**
-
-#### Problem:
-Write a function to create a **deep copy** of an object, without affecting the original object.
-
-#### Solution:
-```javascript
-function deepClone(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
-```
-
-#### Explanation:
-- The function uses `JSON.stringify()` to convert the object to a string and `JSON.parse()` to create a new object from that string.
-- This method works for objects without methods, `undefined`, or circular references.
-
----
-
-### **20. Find Duplicate Elements in an Array**
-
-#### Problem:
-Write a function that identifies and returns all duplicate elements in an array.
-
-#### Solution:
-```javascript
-function findDuplicates(arr) {
-  const seen = new Set();
-  const duplicates = new Set();
-  arr.forEach(item => {
-    if (seen.has(item)) {
-      duplicates.add(item);
-    } else {
-      seen.add(item);
-    }
-  });
-  return [...duplicates];
-}
-```
-
-#### Explanation:
-- Uses two sets: `seen` to store unique items, and `duplicates` to store items that appear more than once.
-- The function runs in linear time (`O(n)`), which is efficient for large arrays.
-
----
-
-### **21. Calculate Fibonacci Numbers (Memoization)**
-
-#### Problem:
-Write a function that calculates Fibonacci numbers using **memoization** for improved performance.
-
-#### Solution:
-```javascript
-function fibonacci(n, memo = {}) {
-  if (n in memo) return memo[n];
-  if (n <= 1) return n;
-  memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
-  return memo[n];
-}
-```
-
-#### Explanation:
-- Memoization caches results to avoid recalculating Fibonacci numbers multiple times.
-- The `memo` object stores previously computed values, improving efficiency.
-
----
-
-### **22. Implementing `Array.prototype.map()`**
-
-#### Problem:
-Write a custom implementation of `Array.prototype.map()`.
-
-#### Solution:
-```javascript
-function customMap(arr, callback) {
-  const result = [];
-  for (let i = 0; i < arr.length; i++) {
-    result.push(callback(arr[i], i, arr));
-  }
-  return result;
-}
-```
-
-#### Explanation:
-- The function iterates through each element in the array, applying the `callback` function and storing the result in a new array.
-- It mimics the behavior of the built-in `map()` function.
-
----
-
-### **23. Counting Occurrences of Characters in a String**
-
-#### Problem:
-Write a function that counts the occurrences of each character in a string.
-
-#### Solution:
-```javascript
-function countOccurrences(str) {
-  return str.split('').reduce((count, char) => {
-    count[char] = (count[char] || 0) + 1;
-    return count;
-  }, {});
-}
-```
-
-#### Explanation:
-- `split('')` converts the string into an array of characters.
-- `reduce()` aggregates the count of each character in an object.
-
----
-
-### **24. Palindrome Check**
-
-#### Problem:
-Write a function to check if a string is a **palindrome** (reads the same forwards and backwards).
-
-#### Solution:
-```javascript
-function isPalindrome(str) {
-  const cleanStr = str.replace(/\W/g, '').toLowerCase();
-  return cleanStr === cleanStr.split('').reverse().join('');
-}
-```
-
-#### Explanation:
-- `replace(/\W/g, '')` removes non-alphanumeric characters.
-- `split('').reverse().join('')` reverses the string and compares it to the original cleaned string.
-
----
-
-### **25. Counting Vowels in a String**
-
-#### Problem:
-Write a function that counts the number of vowels in a string.
-
-#### Solution:
-```javascript
-function countVowels(str) {
-  const vowels = 'aeiou';
-  return str.split('').filter(char => vowels.includes(char.toLowerCase())).length;
-}
-```
-
-#### Explanation:
-- The function splits the string into characters and filters out vowels using `filter()` and `includes()`.
-- It then returns the length of the filtered array.
-
----
-
-### **26. Sum of Digits in a Number**
-
-#### Problem:
-Write a function that computes the sum of digits in a given number.
-
-#### Solution:
-```javascript
-function sumDigits(num) {
-  return Math.abs(num).toString().split('').reduce((sum, digit) => sum + Number(digit), 0);
-}
-```
-
-#### Explanation:
-- `Math.abs(num)` ensures the number is positive.
-- `split('')` converts the number into an array of digits, and `reduce()` sums them.
-
----
-
-### **27. Convert a String to Title Case**
-
-#### Problem:
-Write a function that converts a string to **title case** (capitalizing the first letter of each word).
-
-#### Solution:
-```javascript
-function toTitleCase(str) {
-  return str
-    .toLowerCase()
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ');
-}
-```
-
-#### Explanation:
-- `toLowerCase()` ensures all words start in lowercase.
-- `map()` is used to capitalize the first letter of each word.
-
----
-
-### **28. Convert a String to Camel Case**
-
-#### Problem:
-Write a function that converts a string into **camel case** (e.g., `"hello world"` to `"helloWorld"`).
-
-#### Solution:
-```javascript
-function toCamelCase(str) {
-  return str
-    .replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, (match, index) => index === 0 ? match.toLowerCase() : match.toUpperCase())
-    .replace(/\s+/g, '');
-}
-```
-
-#### Explanation:
-- This function replaces spaces and capitalizes the first letter of each word except the first one.
-
----
-
-### **29. Merge Sorted Arrays**
-
-#### Problem:
-Write a function that merges two **sorted** arrays into one sorted array.
-
-#### Solution:
-```javascript
-function mergeSortedArrays(arr1, arr2) {
-  let result = [];
-  let i = 0, j = 0;
-  
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
-      result.push(arr1[i]);
-      i++;
-    } else {
-      result.push(arr2[j]);
-      j++;
-    }
-  }
-  
-  return result.concat(arr1.slice(i), arr2.slice(j));
-}
-```
-
-#### Explanation:
-- This function compares elements from both arrays and merges them in sorted order.
-- The `concat()` method is used to append any remaining elements from either array.
-
----
-
-### **30. Implementing a Simple Event Emitter**
-
-#### Problem:
-Write a simple **EventEmitter** class to handle custom events.
-
-#### Solution:
-```javascript
-class EventEmitter {
-  constructor() {
-    this.events = {};
-  }
-
-  on(event, listener) {
-    if (!this.events[event]) {
-      this.events[event] = [];
-    }
-    this.events[event].push(listener);
-  }
-
-  emit(event, ...args) {
-    if (this.events[event]) {
-      this.events[event].forEach(listener => listener(...args));
-    }
-  }
-
-  off(event, listener) {
-    if (this.events[event]) {
-      this.events[event] = this.events[event].filter(l => l !== listener);
-    }
-  }
-}
-```
-
-#### Explanation:
-- The `EventEmitter` class allows registering, emitting, and removing event listeners.
-- The `on()` method adds listeners, `emit()` triggers the event, and `off()` removes a specific listener.
-
----
-
-### **Conclusion**
-
-These 30 JavaScript problems cover a wide range of topics from **functional programming** and **
-**object-oriented design** to **algorithmic challenges** and **advanced techniques** like **debouncing** and **throttling**. They provide a comprehensive overview of the **intermediate JavaScript** level and are designed to help you master the key concepts that are essential for real-world development. 
-
-### **Key Takeaways:**
-- **Advanced JavaScript Techniques**: You will learn essential techniques like **debouncing**, **throttling**, **memoization**, and **event handling**.
-- **Algorithmic Problem-Solving**: The problems test your ability to solve complex algorithmic challenges, such as flattening arrays, calculating Fibonacci numbers, and merging sorted arrays.
-- **Functional Programming**: The problems focus on understanding concepts such as **map**, **reduce**, **filter**, and recursion.
-- **Asynchronous Programming**: Topics like **debouncing** and **throttling** will help you handle asynchronous operations more effectively.
-- **Design Patterns**: You’ll explore concepts like the **Singleton** and **LRU Cache**, which are essential for building scalable applications.
-
-### **Practice and Application:**
-- The problems are designed to help you practice and refine your problem-solving skills. By implementing the solutions and understanding the underlying principles, you’ll improve your understanding of JavaScript and be well-prepared for both technical interviews and real-world projects.
-- To solidify your knowledge, try solving the problems with different approaches, optimizing for performance, or applying them to actual use cases (e.g., building a small application or working on an open-source project).
-
-By working through these challenges, you’ll gain a deeper understanding of JavaScript and its capabilities, preparing you for more advanced topics such as frameworks (React, Vue, Angular), Node.js, and full-stack development.
-
----
-
-### **Further Learning Resources:**
-- **MDN Web Docs**: The go-to reference for all JavaScript documentation and examples.
-- **JavaScript.info**: A comprehensive guide for both beginners and intermediate learners.
-- **Eloquent JavaScript** (book): An excellent resource for mastering JavaScript and exploring more advanced topics.
-- **LeetCode**, **Codewars**, and **HackerRank**: Online platforms to practice more algorithmic challenges and improve your problem-solving skills.
-
-Good luck with your JavaScript journey!
