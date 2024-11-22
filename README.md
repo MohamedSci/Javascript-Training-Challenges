@@ -4,8 +4,12 @@
 
 ### These challenges assess key JavaScript concepts, such as
 
--Functional programming (e.g., map, filter, reduce)
--Asynchronous programming (e.g., promises, async/await)
--Object and array manipulation
--Recursion
--Advanced problem-solving with algorithms.
+#### Functional programming (e.g., map, filter, reduce)
+
+#### Asynchronous programming (e.g., promises, async/await)
+
+#### Object and array manipulation
+
+#### Recursion
+
+#### Advanced problem-solving with algorithms.
