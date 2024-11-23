@@ -24,14 +24,11 @@ Constraints:
 */
 
 
-class Exampl1 {
+class Solution {
 
-    static getTheMaxiumOutput() {
-        // var prices = [7, 1, 5, 3, 6, 4];
-        var prices = [7, 6, 4, 3, 1];
+    static getTheMaxiumOutput(prices) {
         var reversedPrices = prices.reverse();
         var profit = 0;
-
         var a;
         var b;
 
@@ -40,7 +37,6 @@ class Exampl1 {
                 if (reversedPrices[z] > prices[i]) {
                     if (profit < (reversedPrices[z] - prices[i])) {
                         var index2 = prices.indexOf(reversedPrices[z]);
-
                         if (index2 < i) {
                             profit = reversedPrices[z] - prices[i];
                             a = prices[i];
@@ -52,6 +48,7 @@ class Exampl1 {
             }
 
         }
+
         if (a != undefined && b != undefined) {
             console.log('Day1 :', a);
             console.log('Day2: ', b);
@@ -66,5 +63,7 @@ class Exampl1 {
 
 }
 
-Exampl1.getTheMaxiumOutput();
+var prices1 = [7, 1, 5, 9, 6, 4];
+var prices2 = [7, 6, 4, 3, 1];
+Solution.getTheMaxiumOutput(prices1);
 

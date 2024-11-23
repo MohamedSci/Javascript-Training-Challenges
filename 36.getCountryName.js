@@ -23,7 +23,6 @@ async function getCountryName(code) {
             break;
         }
     }
-
     return null;
 }
 
