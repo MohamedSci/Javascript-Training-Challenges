@@ -12,5 +12,3 @@ function modifyArray(arr) {
 // -We use the Array.prototype.map() method to create a new array by applying a transformation to each element.
 // -The transformation checks if a number is even (num % 2 === 0). If true, it multiplies the number by 2; otherwise, it divides the number by 2.
   
-
-  

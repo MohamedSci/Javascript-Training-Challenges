@@ -14,10 +14,11 @@ function retryWithExponentialBackoff(fn, retries, delay) {
                     }
                 });
         };
-
         attempt(retries, delay);
     });
 }
+
+
 
 // Test case
 const apiCall = () => new Promise((resolve, reject) => Math.random() > 0.7 ? resolve('Success') : reject('Failed'));
