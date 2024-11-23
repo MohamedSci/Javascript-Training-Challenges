@@ -1,54 +1,66 @@
 const https = require('https');
-const fs = require('fs');
 
-// Function to make the API request and fetch the country name by code
-function getCountryName(code, callback) {
-    const apiUrl = `https://sommock.hackerrank.com/api/countries?page=1`;  
+async function getCountryName(code) {
     let page = 1;
 
-    // Loop to handle pagination
-    function fetchPage(page) {
-        const url = `https://sommock.hackerrank.com/api/countries?page=${page}`;
+    while (true) {
+        try {
+            const data = await fetchPage(page);
 
+            for (const country of data.data) {
+                if (country.alpha2Code === code) {
+                    return country.name;
+                }
+            }
+
+            if (page >= data.total_pages) {
+                break;
+            }
+
+            page++;
+        } catch (error) {
+            console.error('Error fetching data:', error);
+            break;
+        }
+    }
+
+    return null;
+}
+
+async function fetchPage(page) {
+    const url = `https://jsonmock.hackerrank.com/api/countries?page=${page}`;
+
+    return new Promise((resolve, reject) => {
         https.get(url, (res) => {
             let data = '';
 
-            // Accumulate data from the response
-            res.on('data', chunk => {
+            res.on('data', (chunk) => {
                 data += chunk;
             });
 
-            // On end of response, parse and check the data
             res.on('end', () => {
                 try {
-                    const jsonData = JSON.parse(data);  // Parse the JSON response
-
-                    // Check each country in the current page
-                    for (const country of jsonData.data) {
-                        if (country.alpha2Code === code) {
-                            callback(null, country.name);  // Return country name
-                            return;  // Exit function once country is found
-                        }
-                    }
-
-                    // If the country is not found, check if there are more pages
-                    if (page < jsonData.total_pages) {
-                        fetchPage(page + 1);  // Fetch next page
-                    } else {
-                        callback('Country not found');  // End the search if all pages are checked
-                    }
+                    const jsonData = JSON.parse(data);
+                    resolve(jsonData);
                 } catch (error) {
-                    callback('Error parsing JSON data');
+                    reject(error);
                 }
             });
-
         }).on('error', (error) => {
-            callback(`Error fetching data: ${error.message}`);
+            reject(error);
         });
-    }
-
-    // Start the process by fetching the first page
-    fetchPage(page);
+    });
 }
 
-
+const code = 'EG';
+getCountryName(code)
+    .then(name => {
+        if (name) {
+            console.log('Country found:', name);
+        } else {
+            console.log('Country not found');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
