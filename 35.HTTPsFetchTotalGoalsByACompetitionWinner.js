@@ -50,8 +50,6 @@ async function getWinnerTotalGoals(competition, year) {
 })();
 
 
-
-
 // Key Features of the JavaScript Implementation
 
 
