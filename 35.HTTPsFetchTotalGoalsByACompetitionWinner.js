@@ -5,6 +5,31 @@
 
 const https = require('https');
 
+// Helper function to fetch data using HTTPS
+function fetchJson(url) {
+  return new Promise((resolve, reject) => {
+    https.get(url, (res) => {
+      let data = '';
+
+      res.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (error) {
+          reject('Error parsing JSON response');
+        }
+      });
+    }).on('error', (err) => {
+      reject(`Request failed: ${err.message}`);
+    });
+  });
+}
+
+
+
 async function getWinnerTotalGoals(competition, year) {
   let totalGoals = 0;
 
