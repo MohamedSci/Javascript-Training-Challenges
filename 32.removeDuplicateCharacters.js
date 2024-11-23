@@ -6,6 +6,7 @@ function removeDuplicateCharacters(string) {
     .join(''); // Join the unique characters back into a string
 }
 
+
 console.log(removeDuplicateCharacters('baraban')); // Output: "barn"
 
 
