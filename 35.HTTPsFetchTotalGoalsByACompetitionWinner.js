@@ -4,7 +4,6 @@
 // Fetch Total Goals by a Competition Winner
 
 const https = require('https');
-
 // Helper function to fetch data using HTTPS
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
