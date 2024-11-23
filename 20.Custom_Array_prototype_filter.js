@@ -1,7 +1,6 @@
 // 20. Custom Array.prototype.filter()
 // Problem: Implement a custom filter function.
 
-// Solution 1 
 function customFilter(array, callback) {
     const result = [];
     for (let i = 0; i < array.length; i++) {
